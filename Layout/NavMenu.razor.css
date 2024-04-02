@@ -1,0 +1,106 @@
+/* Estilos globais */
+a {
+    font-size: 1rem; /* Tamanho padrão para links */
+    color: #d7d7d7; /* Cor padrão para links */
+    text-decoration: none; /* Removido sublinhado padrão */
+}
+
+nav {
+    height: 80px; /* Altura fixa para o cabeçalho */
+    color: white; /* Cor do texto */
+    text-align: center; /* Centralizar texto */
+    padding: 15px 0; /* Espaçamento interno */
+}
+
+/* Barra de navegação */
+.navbar {
+    position: fixed; /* Tornar o cabeçalho fixo */
+    top: 0; /* Alinhar o cabeçalho no topo da janela */
+    width: 100%; /* Definir largura total */
+    z-index: 1000; /* Z-index alto para garantir que fique acima do conteúdo */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.0); /* Sombra */
+}
+
+
+
+/* Nome do site na barra de navegação */
+.navbar-brand {
+    font-size: 1.5rem; /* Tamanho da fonte do nome do site */
+    position: relative; /* Definir posição relativa */
+    align-items: center; /* Alinhar os elementos verticalmente */
+    display: flex; /* Alinhar os elementos horizontalmente */
+    padding: 0 15px; /* Espaçamento interno */
+}
+
+/* Botão de alternância da barra de navegação */
+.navbar-toggler {
+    background-color: rgba(255, 255, 255, 0.1); /* Cor de fundo do botão de alternância */
+    border: none; /* Remover borda */
+    position: absolute; /* Posicionar absolutamente */
+    right: 15px; /* Distância da direita */
+    top: 50%; /* Centralizar verticalmente */
+    transform: translateY(-50%); /* Centralizar verticalmente */
+    z-index: 9999; /* Z-index alto para ficar acima do conteúdo */
+}
+
+/* Efeito de hover no botão de alternância */
+.navbar-toggler:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Cor de fundo ao passar o mouse */
+}
+
+/* Ícone do botão de alternância */
+.navbar-toggler-icon {
+    color: #fff; /* Cor do ícone */
+    font-size: 2rem; /* Tamanho do ícone */
+}
+
+/* Itens do menu de navegação */
+.nav-item {
+    padding: 1rem 0.5rem; /* Espaçamento interno dos itens do menu */
+}
+
+
+/* Efeito de hover ou ativo nos links do menu de navegação */
+.nav-item a.active,
+.nav-item a:hover {
+    color: white; /* Cor do texto ativo e ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de levantar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
+}
+
+.navbar-brand img {
+    max-height: 160px; /* Altura máxima da logo */
+}
+
+
+/* Menu de navegação responsivo */
+@media (max-width: 991.98px) {
+    .navbar-brand {
+        justify-content: center; /* Centralizar conteúdo horizontalmente */
+        max-height: 50px; /* Altura máxima da logo */
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Coluna para telas pequenas */
+        text-align: center; /* Centralizar texto */
+    }
+
+    .navbar-nav .nav-item {
+        padding: 0.5rem 1rem; /* Espaçamento interno dos itens do menu */
+    }
+
+ 
+    .collapse.navbar-collapse {
+        display: none; /* Ocultar menu colapsado */
+    }
+
+    .collapse.navbar-collapse.show {
+        display: block; /* Mostrar menu colapsado */
+    }
+
+    /* Estilo da logo e do texto para telas menores */
+    .logo-container {
+        justify-content: center; /* Centralizar conteúdo */
+    }
+
+}

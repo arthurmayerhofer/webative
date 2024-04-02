@@ -1,0 +1,281 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-image: url('/images/background-aurora.jpeg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    padding-top: 60px;
+    /* Espaço superior para evitar que o conteúdo fique atrás do cabeçalho */
+}
+
+section {
+    border-radius: 15px;
+    opacity: 0.95;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.hero {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-text {
+    max-width: 50%;
+    color: #f4f4f4;
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.hero-image img {
+    max-width: 70%;
+    height: auto;
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, black 50%);
+    mask-image: linear-gradient(to top, transparent 0%, black 50%);
+    animation: celebrate 8s infinite alternate ease-in-out;
+    /* Animação */
+    transition: transform 0.5s ease-in-out;
+    /* Transição para suavizar a animação */
+    position: relative;
+    z-index: 1;
+    /* Define a ordem de empilhamento */
+}
+
+.hero-image {
+    position: relative;
+    margin-top: 50px;
+}
+
+.hero-image img:nth-child(2) {
+    position: absolute;
+    bottom: 100px;
+    /* Ajuste a posição conforme necessário */
+    right: 220px;
+    /* Ajuste a posição conforme necessário */
+    z-index: -1;
+    /* Coloca a segunda imagem atrás da primeira */
+}
+
+.hero-image img:nth-child(3) {
+    position: absolute;
+    bottom: 100px;
+    /* Ajuste a posição conforme necessário */
+    left: 220px;
+    /* Ajuste a posição conforme necessário */
+    z-index: -2;
+    /* Coloca a segunda imagem atrás da primeira */
+}
+
+.image-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    /* Impede que as imagens quebrem para uma nova linha */
+    justify-content: center;
+    /* Centraliza as imagens horizontalmente */
+    margin: 0 -5px;
+    /* Define uma margem negativa para compensar o espaçamento padrão */
+}
+
+.image-wrapper img {
+    margin: 0 5px;
+    /* Adiciona um espaçamento entre as imagens */
+}
+
+
+@keyframes celebrate {
+    0% {
+        transform: scale(1) rotate(0deg);
+        /* Estado inicial */
+    }
+
+    50% {
+        transform: scale(1.1) rotate(5deg);
+        /* Meio da animação */
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+        /* Estado final */
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.section-image img {
+    max-width: 20%;
+    height: auto;
+    animation: slideInFromLeft 5s ease-in-out forwards;
+    /* Aplica a animação */
+}
+
+.products {
+    background-color: white;
+    padding: 50px 0;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.col-md-4 {
+    flex: 0 0 32%;
+}
+
+.product {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    /* Adicionando borda verde */
+    box-shadow: 0 0 20px rgba(11, 131, 59, 0.1);
+    transition: transform 0.3s ease-in-out;
+    margin-left: 20px;
+    /* Adiciona uma margem à esquerda */
+    margin-right: 20px;
+    /* Adiciona uma margem à direita */
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product img {
+    max-width: 10%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.product h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product p {
+    font-size: 16px;
+    color: #666;
+}
+
+.product-text {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #76bc76, #b8ebd1);
+    -webkit-background-clip: text;
+    /* Aplica o gradiente como fundo do texto */
+    -webkit-text-fill-color: transparent;
+    /* Torna o texto transparente para exibir o gradiente */
+    margin: 20px 40px 5px 0px;
+    /* Margem superior de 10px, margem direita de 20px, margem inferior de 5px e margem esquerda de 15px */
+
+}
+
+.section-image img {
+    max-width: 100%;
+    height: auto;
+    margin-right: 180px;
+    padding-right: 20px;
+}
+
+
+/* Menu de navegação responsivo */
+@media (max-width: 576px) {
+    .product-text h3 {
+        font-size: 12px;
+    }
+
+    .hero-text h1 {
+        font-size: 20px;
+    }
+
+    .hero-text h2 {
+        font-size: 14px;
+    }
+
+    .image-wrapper img {
+        margin: 0 5px;
+        /* Reduz o espaçamento entre as imagens em telas menores */
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .product-text h3 {
+        font-size: 12px;
+    }
+
+    .hero-text h1 {
+        font-size: 20px;
+    }
+
+    .hero-text h2 {
+        font-size: 16px;
+    }
+
+
+    /* Outros ajustes necessários */
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .product-text h3 {
+        font-size: 14px;
+    }
+
+    .hero-text h1 {
+        font-size: 24px;
+    }
+
+    .hero-text h2 {
+        font-size: 18px;
+    }
+
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+    .product-text h3 {
+        font-size: 18px;
+    }
+
+    .hero-text h1 {
+        font-size: 26px;
+    }
+
+    .hero-text h2 {
+        font-size: 20px;
+    }
+
+    /* Outros ajustes necessários */
+}
