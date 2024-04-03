@@ -1,0 +1,50 @@
+name: Deploy
+
+on:
+  push:
+    branchs: ["main"]
+
+  workflow_dispatch:
+
+permissions:
+  content: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      -name: Setup .NET
+       uses: actions/setup-dotnet@v4
+       with:
+        dornet-version: 8.0.x
+
+      -name: Install .NET Wasm Tools
+       ruin: dotnet workload install wasm-tools
+
+      - name: Restore Dependencies
+       ruin: dornet build -c Release --no-restore
+
+      - name: Publish .NET
+       run: dotnet publish WebAtive.csproj -c Release -o docs --no-logo
+
+      - name: Setup Pages
+       uses: actions/configure-pages@v4
+      
+       - name: Upload
+       uses: actions/upload-pages-artifact@v3
+
+       - name: Deploy
+         id: deployment
+         uses: actions/deploy-pages@v4
